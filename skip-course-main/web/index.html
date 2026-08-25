@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Coursera Automation — Setup Guide</title>
+<meta name="description" content="Set up Coursera Automation in about 5 minutes. Seven steps, one config file, every command ready to copy. By Raushan Raj.">
+<meta name="author" content="Raushan Raj">
+<meta name="theme-color" content="#5B6CFF">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235B6CFF'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+
+<!-- social preview -->
+<meta property="og:title" content="Coursera Automation — Setup Guide">
+<meta property="og:description" content="Seven steps, one config file, about five minutes. By Raushan Raj.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./img.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- reading progress -->
+<div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+
+<div class="wrap">
+
+  <!-- top bar -->
+  <div class="topbar">
+    <a class="brand" href="#top">
+      <span class="mark">CA</span>
+      <span class="bname">Coursera Automation</span>
+    </a>
+    <button id="theme-toggle" class="tbtn" type="button" aria-pressed="false">Dark mode</button>
+  </div>
+
+  <!-- hero -->
+  <header class="hero" id="top">
+    <div class="pill"><i></i> Setup takes about 5 minutes</div>
+
+    <h1>Get <em>Coursera Automation</em> running on your machine.</h1>
+
+    <p class="lede">
+      A Python tool that works through your course for you. Follow seven steps,
+      generate one config file, and you're done. Every command is copy-paste.
+    </p>
+
+    <div class="who">
+      <div class="av">RR</div>
+      <div><b>Raushan Raj</b><span>Author &amp; maintainer</span></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>7</b><span>Steps</span></div>
+      <div class="stat"><b>~5m</b><span>Setup time</span></div>
+      <div class="stat"><b>3</b><span>Cookies</span></div>
+      <div class="stat"><b>1</b><span>Config file</span></div>
+    </div>
+
+    <div class="frame">
+      <div class="top"><i class="d"></i><i class="d"></i><i class="d"></i><span>skip-course — preview</span></div>
+      <img src="./img.png" alt="Screenshot of Coursera Automation running in a terminal" loading="lazy">
+    </div>
+  </header>
+
+  <div class="main">
+
+    <!-- sticky progress rail -->
+    <aside class="rail">
+      <div class="ringcard">
+        <div class="ringwrap">
+          <div class="ring">
+            <svg width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+              <circle class="trk" cx="29" cy="29" r="24"></circle>
+              <circle class="val" id="ring" cx="29" cy="29" r="24" stroke-dasharray="150.8" stroke-dashoffset="150.8"></circle>
+            </svg>
+            <b id="ringtxt">0%</b>
+          </div>
+          <p>Setup progress<span>Scroll to advance</span></p>
+        </div>
+      </div>
+
+      <nav aria-label="Setup steps">
+        <ol>
+          <li><a href="#s0" data-t="s0"><span class="n"><i>0</i></span> Install Python</a></li>
+          <li><a href="#s1" data-t="s1"><span class="n"><i>1</i></span> Download tool</a></li>
+          <li><a href="#s2" data-t="s2"><span class="n"><i>2</i></span> Copy cookies</a></li>
+          <li><a href="#s3" data-t="s3"><span class="n"><i>3</i></span> Create config</a></li>
+          <li><a href="#s4" data-t="s4"><span class="n"><i>4</i></span> Extract slug</a></li>
+          <li><a href="#s5" data-t="s5"><span class="n"><i>5</i></span> Install deps</a></li>
+          <li><a href="#s6" data-t="s6"><span class="n"><i>6</i></span> Run it</a></li>
+        </ol>
+      </nav>
+    </aside>
+
+    <main>
+
+      <!-- STEP 0 -->
+      <section class="step" id="s0">
+        <span class="tag">Prerequisite</span>
+        <h2>Install Python</h2>
+        <p>
+          This tool runs on Python, so it needs to be on your computer first.
+          Installing Python isn't part of the tool itself.
+        </p>
+        <p>
+          New to it?
+          <a href="https://www.youtube.com/watch?v=ddGTXBhaGWA" target="_blank" rel="noopener">Watch the walkthrough on YouTube</a>.
+        </p>
+        <div class="code"><pre><span class="pmt">$</span> python --version
+<span class="cm">Python 3.12.4</span></pre></div>
+      </section>
+
+      <!-- STEP 1 -->
+      <section class="step" id="s1">
+        <span class="tag">Step 1</span>
+        <h2>Download the tool</h2>
+        <p>
+          Get the project from
+          <a href="https://github.com/raushanraj00/skip_course_by_rau.git" target="_blank" rel="noopener">GitHub</a>
+          and unzip it somewhere you'll find again.
+        </p>
+        <div class="code"><pre><span class="pmt">$</span> git clone https://github.com/raushanraj00/skip_course_by_rau.git</pre></div>
+      </section>
+
+      <!-- STEP 2 -->
+      <section class="step" id="s2">
+        <span class="tag">Step 2 · Interactive</span>
+        <h2>Copy your Coursera cookies</h2>
+        <p>Log in to your Coursera account, then pull three values from your browser:</p>
+
+        <ol>
+          <li>Right-click anywhere on the page and choose <strong>Inspect</strong>.</li>
+          <li>Open the <strong>Application</strong> tab.</li>
+          <li>Select <strong>Cookies → coursera.org</strong>.</li>
+          <li>Copy these three values:
+            <ul>
+              <li>CAUTH</li>
+              <li>CSRF3-Token</li>
+              <li>__204u</li>
+            </ul>
+          </li>
+        </ol>
+
+        <img class="guide" src="./cookie.png" alt="Chrome DevTools showing where Coursera cookies are listed" loading="lazy">
+
+        <div class="callout tip">
+          <span class="ic" aria-hidden="true">✓</span>
+          <div>
+            <b>On macOS this is automatic</b>
+            <p>You don't need to create config.json yourself — the command pulls your cookies straight from Chrome.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <span class="ic" aria-hidden="true">!</span>
+          <div>
+            <b>Generate before you save</b>
+            <p>Click Generate JSON first, then Save config.json. The file downloads to your Downloads folder.</p>
+          </div>
+        </div>
+
+        <div class="callout tip">
+          <span class="ic" aria-hidden="true">✓</span>
+          <div>
+            <b>Nothing leaves your browser</b>
+            <p>These three fields run entirely on this page. No cookie value is uploaded anywhere.</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="csrf">CSRF3-Token</label>
+          <input id="csrf" type="text" placeholder="Paste CSRF3-Token" autocomplete="off" spellcheck="false">
+        </div>
+
+        <div class="field">
+          <label for="uu">__204u</label>
+          <input id="uu" type="text" placeholder="Paste __204u" autocomplete="off" spellcheck="false">
+        </div>
+
+        <div class="field">
+          <label for="cauth">CAUTH</label>
+          <input id="cauth" type="text" placeholder="Paste CAUTH" autocomplete="off" spellcheck="false">
+        </div>
+
+        <div class="btns">
+          <button id="generate" class="btn pri" type="button">Generate JSON</button>
+          <button id="copy" class="btn" type="button">Copy JSON</button>
+          <button id="save" class="btn" type="button">Save config.json</button>
+        </div>
+
+        <pre id="json-output" class="out" tabindex="0" aria-live="polite"></pre>
+      </section>
+
+      <!-- STEP 3 -->
+      <section class="step" id="s3">
+        <span class="tag">Step 3</span>
+        <h2>Create the configuration file</h2>
+        <p>Create this folder if it doesn't already exist:</p>
+        <div class="code"><pre>C:\Users\YourPcUsername\.skip-course</pre></div>
+        <p>Inside it, create a file named:</p>
+        <div class="code"><pre>config.json</pre></div>
+        <p>
+          Paste the generated JSON into that file and save it — or just move the
+          downloaded config.json from Step 2 into this folder.
+        </p>
+      </section>
+
+      <!-- STEP 4 -->
+      <section class="step" id="s4">
+        <span class="tag">Step 4 · Interactive</span>
+        <h2>Extract the course slug</h2>
+        <p>Paste your Coursera course URL below and the slug gets pulled out for you.</p>
+
+        <div class="field">
+          <label for="course-url">Course URL</label>
+          <input id="course-url" type="text" placeholder="https://www.coursera.org/learn/course-name/home" autocomplete="off" spellcheck="false">
+        </div>
+
+        <div class="btns">
+          <button id="extract" class="btn pri" type="button">Extract slug</button>
+          <button id="copy-slug" class="btn" type="button">Copy slug</button>
+        </div>
+
+        <pre id="slug-output" class="out" tabindex="0" aria-live="polite"></pre>
+      </section>
+
+      <!-- STEP 5 -->
+      <section class="step" id="s5">
+        <span class="tag">Step 5</span>
+        <h2>Install requirements</h2>
+        <p>Open the downloaded project in VS Code.</p>
+        <p>
+          Go to the project folder, right-click inside it, and choose
+          <strong>Open in Terminal</strong> or <strong>Open in Command Prompt</strong>. Then run:
+        </p>
+        <div class="code"><pre><span class="pmt">$</span> pip install -r requirements.txt</pre></div>
+
+        <div class="callout">
+          <span class="ic" aria-hidden="true">!</span>
+          <div>
+            <b>If the terminal keeps running</b>
+            <p>Once the install finishes, press <strong>Ctrl + C</strong> to stop it.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <span class="ic" aria-hidden="true">!</span>
+          <div>
+            <b>Stuck on pyproject.toml?</b>
+            <p>Kill the process with <strong>Ctrl + C</strong>, then run the same command again.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 6 -->
+      <section class="step" id="s6">
+        <span class="tag">Step 6 · Final</span>
+        <h2>Run the tool</h2>
+        <p>Pass the slug you extracted in Step 4:</p>
+        <div class="code"><pre><span class="pmt">$</span> python -m raushan.main "your-course-slug"</pre></div>
+
+        <p>For example:</p>
+        <div class="code"><pre><span class="pmt">$</span> python -m raushan.main "machine-Learning"</pre></div>
+
+        <div class="callout tip">
+          <span class="ic" aria-hidden="true">✓</span>
+          <div>
+            <b>Module not found?</b>
+            <p>Install whatever module the error names, then run the command again:</p>
+          </div>
+        </div>
+
+        <div class="code"><pre><span class="pmt">$</span> pip install httpx
+<span class="cm"># or, if that doesn't work</span>
+<span class="pmt">$</span> python3 -m pip install httpx</pre></div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <div class="fcard">
+      <div class="chk" aria-hidden="true">✓</div>
+      <h2>You're ready!</h2>
+      <p>The whole setup usually takes under <b>5 minutes</b> from start to finish.</p>
+      <p>Built by <b>Raushan Raj</b> — you're all welcome.</p>
+      <div class="flinks">
+        <a href="https://github.com/raushanraj00/skip_course_by_rau.git" target="_blank" rel="noopener">View on GitHub</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script src="./main.js"></script>
+</body>
+</html>
